@@ -4,7 +4,8 @@ Hex to type convert, CRC calculate and Epoch-Unix Timestamp Conversion
 The application consists of three parts.
 The first section contains hex & primitive data types conversions. The second part contains crc calculations according to various algorithms from hex data. The third section includes various history transformations.
 
-** Hex To Primitive Types Converting **
+**Hex To Primitive Types Converting**
+
 The following conversion processes take place in this section:
 
   * Hex data to Float - Big Endian (ABCD)
@@ -35,7 +36,8 @@ The following conversion processes take place in this section:
 SNAPSHOT For Hex To Primitive Types Converting
 ![SNAPSHOT1](https://user-images.githubusercontent.com/42136540/87153810-bb4b3900-c2c0-11ea-95b0-69382422d5af.PNG)
 
-** CRC Calculating **
+**CRC Calculating**
+
 The following CRC calculating processes take place in this section:
   
   * CheckSum8 Xor
@@ -55,7 +57,8 @@ The following CRC calculating processes take place in this section:
 SNAPSHOT For CRC Calculating 
 ![SNAPSHOT2](https://user-images.githubusercontent.com/42136540/87153817-bdad9300-c2c0-11ea-99bb-cbf77008787c.PNG)
 
-** Time Converting **
+**Time Converting**
+
 The following Time converting processes take place in this section:
 
 * Live epoch time viewing
