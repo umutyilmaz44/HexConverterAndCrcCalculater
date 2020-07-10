@@ -74,6 +74,7 @@ namespace HexToTypeConverter
             }
             #endregion
 
+            #region Hex To Data Type
             List<byte> hexDataList;
             hexDataList = convertController.CheckListLengthMultipleOf(rawDataList, 2);
 
@@ -109,23 +110,26 @@ namespace HexToTypeConverter
             ConvertHexToValue("Double", 2, hexDataList);
             ConvertHexToValue("Double", 3, hexDataList);
             ConvertHexToValue("Double", 4, hexDataList);
+            #endregion
 
+            #region Calculate CheckSum 
+            CalculateCheckSum("CheckSum8Xor", rawDataList);
+            CalculateCheckSum("CheckSum8Modulo256", rawDataList);
+            CalculateCheckSum("CheckSum82sComplement", rawDataList);
 
-            CalculateCheckSum("CheckSum8Xor", hexDataList);
-            CalculateCheckSum("CheckSum8Modulo256", hexDataList);
-            CalculateCheckSum("CheckSum82sComplement", hexDataList);
-            CalculateCheckSum("CheckSumCrc16", hexDataList);
-            CalculateCheckSum("CheckSumCrc16CCITT", hexDataList);
-            CalculateCheckSum("CheckSumCRC16IBM", hexDataList);
+            CalculateCheckSum("CheckSumCrc16", rawDataList);
+            CalculateCheckSum("CheckSumCrc16CCITT", rawDataList);
+            CalculateCheckSum("CheckSumCRC16IBM", rawDataList);
             
-            CalculateCheckSum("CheckSumCRC16T10DIF", hexDataList);
-            CalculateCheckSum("CheckSumCRC16DNP", hexDataList);
-            CalculateCheckSum("CheckSumCRC16DECT", hexDataList);
+            CalculateCheckSum("CheckSumCRC16T10DIF", rawDataList);
+            CalculateCheckSum("CheckSumCRC16DNP", rawDataList);
+            CalculateCheckSum("CheckSumCRC16DECT", rawDataList);
 
-            CalculateCheckSum("CheckSumCrc32", hexDataList);
-            CalculateCheckSum("CheckSumCrc32CCastagnoli", hexDataList);
-            CalculateCheckSum("CheckSumCrc32KKoopman", hexDataList);
-            CalculateCheckSum("CheckSumCrc32Q", hexDataList); 
+            CalculateCheckSum("CheckSumCrc32", rawDataList);
+            CalculateCheckSum("CheckSumCrc32CCastagnoli", rawDataList);
+            CalculateCheckSum("CheckSumCrc32KKoopman", rawDataList);
+            CalculateCheckSum("CheckSumCrc32Q", rawDataList);
+            #endregion
         }
 
         private void SetFormComponentSize()
@@ -606,7 +610,7 @@ namespace HexToTypeConverter
 
                         foreach (Crc32.StandardMode poly in polyNodes)
                         {
-                            typeName = Enum.GetName(typeof(Crc32.StandardMode), poly) + "-" + ((ushort)poly).ToString("X");
+                            typeName = Enum.GetName(typeof(Crc32.StandardMode), poly) + "-" + ((uint)poly).ToString("X");
                             valueCrc = checkSumController.CheckSumCrc32(hexDataList.ToArray(), hexDataList.Count, (uint)poly);
 
                             data = BitConverter.GetBytes(valueCrc);
@@ -660,7 +664,7 @@ namespace HexToTypeConverter
 
                         foreach (Crc32.CastagnoliMode poly in polyNodes)
                         {
-                            typeName = Enum.GetName(typeof(Crc32.CastagnoliMode), poly) + "-" + ((ushort)poly).ToString("X");
+                            typeName = Enum.GetName(typeof(Crc32.CastagnoliMode), poly) + "-" + ((uint)poly).ToString("X");
                             valueCrc = checkSumController.CheckSumCrc32(hexDataList.ToArray(), hexDataList.Count, (uint)poly);
 
                             data = BitConverter.GetBytes(valueCrc);
@@ -714,7 +718,7 @@ namespace HexToTypeConverter
 
                         foreach (Crc32.KoopmanMode poly in polyNodes)
                         {
-                            typeName = Enum.GetName(typeof(Crc32.KoopmanMode), poly) + "-" + ((ushort)poly).ToString("X");
+                            typeName = Enum.GetName(typeof(Crc32.KoopmanMode), poly) + "-" + ((uint)poly).ToString("X");
                             valueCrc = checkSumController.CheckSumCrc32(hexDataList.ToArray(), hexDataList.Count, (uint)poly);
 
                             data = BitConverter.GetBytes(valueCrc);
@@ -768,7 +772,7 @@ namespace HexToTypeConverter
 
                         foreach (Crc32.QMode poly in polyNodes)
                         {
-                            typeName = Enum.GetName(typeof(Crc32.QMode), poly) + "-" + ((ushort)poly).ToString("X");
+                            typeName = Enum.GetName(typeof(Crc32.QMode), poly) + "-" + ((uint)poly).ToString("X");
                             valueCrc = checkSumController.CheckSumCrc32(hexDataList.ToArray(), hexDataList.Count, (uint)poly);
 
                             data = BitConverter.GetBytes(valueCrc);

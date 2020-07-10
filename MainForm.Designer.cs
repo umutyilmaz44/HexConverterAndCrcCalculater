@@ -535,7 +535,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(976, 578);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "CRC Calculater";
+            this.tabPage2.Text = "CRC Calculator";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // fpnlCrc5
@@ -1699,7 +1699,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(976, 578);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Hex Converter";
+            this.tabPage1.Text = "Hex Convertor";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // pnlMain
@@ -3483,7 +3483,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(976, 578);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Time Calculater";
+            this.tabPage3.Text = "Time Calculator";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // cmbTimeKind
@@ -3578,7 +3578,7 @@
             this.btnHumanDateToTimestamp.Name = "btnHumanDateToTimestamp";
             this.btnHumanDateToTimestamp.Size = new System.Drawing.Size(200, 31);
             this.btnHumanDateToTimestamp.TabIndex = 30;
-            this.btnHumanDateToTimestamp.Text = "Human dateto Timestamp";
+            this.btnHumanDateToTimestamp.Text = "Human date to Timestamp";
             this.btnHumanDateToTimestamp.UseVisualStyleBackColor = true;
             this.btnHumanDateToTimestamp.Click += new System.EventHandler(this.btnHumanDateToTimestamp_Click);
             // 
