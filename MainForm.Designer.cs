@@ -335,6 +335,24 @@
             this.dgvBinaryValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cmbTimeKind = new System.Windows.Forms.ComboBox();
+            this.lblYourTimZoneDatetimeValue = new System.Windows.Forms.Label();
+            this.lblTimestampMilliSecondValues = new System.Windows.Forms.Label();
+            this.lblYourTimZoneDatetime = new System.Windows.Forms.Label();
+            this.lblTimestampMilliSeconds = new System.Windows.Forms.Label();
+            this.lblDateAndTimeGMTValue = new System.Windows.Forms.Label();
+            this.lblDateAndTimeGMT = new System.Windows.Forms.Label();
+            this.lblEpochTimestampValue = new System.Windows.Forms.Label();
+            this.lblEpochTimestamp = new System.Windows.Forms.Label();
+            this.btnHumanDateToTimestamp = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSec = new System.Windows.Forms.Label();
+            this.lblMinute = new System.Windows.Forms.Label();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.txtHumanDateSecond = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtHumanDateMinute = new System.Windows.Forms.TextBox();
+            this.txtHumanDateHour = new System.Windows.Forms.TextBox();
             this.lblMonthDay = new System.Windows.Forms.Label();
             this.lblDay = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
@@ -357,24 +375,6 @@
             this.txtEpochTime = new System.Windows.Forms.TextBox();
             this.lblUnixEpochTime = new System.Windows.Forms.Label();
             this.tmrEpochTime = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblSec = new System.Windows.Forms.Label();
-            this.lblMinute = new System.Windows.Forms.Label();
-            this.lblHour = new System.Windows.Forms.Label();
-            this.txtHumanDateSecond = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtHumanDateMinute = new System.Windows.Forms.TextBox();
-            this.txtHumanDateHour = new System.Windows.Forms.TextBox();
-            this.btnHumanDateToTimestamp = new System.Windows.Forms.Button();
-            this.lblEpochTimestampValue = new System.Windows.Forms.Label();
-            this.lblEpochTimestamp = new System.Windows.Forms.Label();
-            this.lblDateAndTimeGMTValue = new System.Windows.Forms.Label();
-            this.lblDateAndTimeGMT = new System.Windows.Forms.Label();
-            this.lblTimestampMilliSeconds = new System.Windows.Forms.Label();
-            this.lblYourTimZoneDatetime = new System.Windows.Forms.Label();
-            this.lblTimestampMilliSecondValues = new System.Windows.Forms.Label();
-            this.lblYourTimZoneDatetimeValue = new System.Windows.Forms.Label();
-            this.cmbTimeKind = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.fpnlCrc5.SuspendLayout();
@@ -727,7 +727,8 @@
             this.lblCRC32.Name = "lblCRC32";
             this.lblCRC32.Size = new System.Drawing.Size(299, 29);
             this.lblCRC32.TabIndex = 14;
-            this.lblCRC32.Text = "(SCSI DIF)";
+            this.lblCRC32.Text = "(ISO 3309, ANSI X3.66, FIPS PUB 71, FED-STD-1003, ITU-T V.42, Ethernet, SATA, MPE" +
+    "G-2, Gzip, PKZIP, POSIX cksum, PNG, ZMODEM)";
             this.lblCRC32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // gboxCR32CCastagnoli
@@ -3485,6 +3486,182 @@
             this.tabPage3.Text = "Time Calculater";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // cmbTimeKind
+            // 
+            this.cmbTimeKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTimeKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTimeKind.FormattingEnabled = true;
+            this.cmbTimeKind.Items.AddRange(new object[] {
+            "GMT",
+            "LocalTime"});
+            this.cmbTimeKind.Location = new System.Drawing.Point(464, 387);
+            this.cmbTimeKind.Name = "cmbTimeKind";
+            this.cmbTimeKind.Size = new System.Drawing.Size(136, 33);
+            this.cmbTimeKind.TabIndex = 39;
+            // 
+            // lblYourTimZoneDatetimeValue
+            // 
+            this.lblYourTimZoneDatetimeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYourTimZoneDatetimeValue.Location = new System.Drawing.Point(242, 519);
+            this.lblYourTimZoneDatetimeValue.Name = "lblYourTimZoneDatetimeValue";
+            this.lblYourTimZoneDatetimeValue.Size = new System.Drawing.Size(336, 16);
+            this.lblYourTimZoneDatetimeValue.TabIndex = 38;
+            this.lblYourTimZoneDatetimeValue.Text = "Date and time (your time zone) value";
+            // 
+            // lblTimestampMilliSecondValues
+            // 
+            this.lblTimestampMilliSecondValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimestampMilliSecondValues.Location = new System.Drawing.Point(242, 468);
+            this.lblTimestampMilliSecondValues.Name = "lblTimestampMilliSecondValues";
+            this.lblTimestampMilliSecondValues.Size = new System.Drawing.Size(336, 16);
+            this.lblTimestampMilliSecondValues.TabIndex = 37;
+            this.lblTimestampMilliSecondValues.Text = "Timestamp in milliseconds value";
+            // 
+            // lblYourTimZoneDatetime
+            // 
+            this.lblYourTimZoneDatetime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYourTimZoneDatetime.Location = new System.Drawing.Point(19, 519);
+            this.lblYourTimZoneDatetime.Name = "lblYourTimZoneDatetime";
+            this.lblYourTimZoneDatetime.Size = new System.Drawing.Size(197, 16);
+            this.lblYourTimZoneDatetime.TabIndex = 36;
+            this.lblYourTimZoneDatetime.Text = "Date and time (your time zone)";
+            // 
+            // lblTimestampMilliSeconds
+            // 
+            this.lblTimestampMilliSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimestampMilliSeconds.Location = new System.Drawing.Point(19, 468);
+            this.lblTimestampMilliSeconds.Name = "lblTimestampMilliSeconds";
+            this.lblTimestampMilliSeconds.Size = new System.Drawing.Size(197, 16);
+            this.lblTimestampMilliSeconds.TabIndex = 35;
+            this.lblTimestampMilliSeconds.Text = "Timestamp in milliseconds";
+            // 
+            // lblDateAndTimeGMTValue
+            // 
+            this.lblDateAndTimeGMTValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateAndTimeGMTValue.Location = new System.Drawing.Point(242, 497);
+            this.lblDateAndTimeGMTValue.Name = "lblDateAndTimeGMTValue";
+            this.lblDateAndTimeGMTValue.Size = new System.Drawing.Size(336, 16);
+            this.lblDateAndTimeGMTValue.TabIndex = 34;
+            this.lblDateAndTimeGMTValue.Text = "Date and time (GMT) value";
+            // 
+            // lblDateAndTimeGMT
+            // 
+            this.lblDateAndTimeGMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateAndTimeGMT.Location = new System.Drawing.Point(18, 497);
+            this.lblDateAndTimeGMT.Name = "lblDateAndTimeGMT";
+            this.lblDateAndTimeGMT.Size = new System.Drawing.Size(135, 16);
+            this.lblDateAndTimeGMT.TabIndex = 33;
+            this.lblDateAndTimeGMT.Text = "Date and time (GMT)";
+            // 
+            // lblEpochTimestampValue
+            // 
+            this.lblEpochTimestampValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEpochTimestampValue.Location = new System.Drawing.Point(242, 445);
+            this.lblEpochTimestampValue.Name = "lblEpochTimestampValue";
+            this.lblEpochTimestampValue.Size = new System.Drawing.Size(336, 16);
+            this.lblEpochTimestampValue.TabIndex = 32;
+            this.lblEpochTimestampValue.Text = "Epoch timestamp value";
+            // 
+            // lblEpochTimestamp
+            // 
+            this.lblEpochTimestamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEpochTimestamp.Location = new System.Drawing.Point(19, 445);
+            this.lblEpochTimestamp.Name = "lblEpochTimestamp";
+            this.lblEpochTimestamp.Size = new System.Drawing.Size(135, 16);
+            this.lblEpochTimestamp.TabIndex = 31;
+            this.lblEpochTimestamp.Text = "Epoch timestamp";
+            // 
+            // btnHumanDateToTimestamp
+            // 
+            this.btnHumanDateToTimestamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHumanDateToTimestamp.Location = new System.Drawing.Point(616, 387);
+            this.btnHumanDateToTimestamp.Name = "btnHumanDateToTimestamp";
+            this.btnHumanDateToTimestamp.Size = new System.Drawing.Size(200, 31);
+            this.btnHumanDateToTimestamp.TabIndex = 30;
+            this.btnHumanDateToTimestamp.Text = "Human dateto Timestamp";
+            this.btnHumanDateToTimestamp.UseVisualStyleBackColor = true;
+            this.btnHumanDateToTimestamp.Click += new System.EventHandler(this.btnHumanDateToTimestamp_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(380, 389);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 31);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "-";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSec
+            // 
+            this.lblSec.AutoSize = true;
+            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec.Location = new System.Drawing.Point(403, 366);
+            this.lblSec.Name = "lblSec";
+            this.lblSec.Size = new System.Drawing.Size(37, 20);
+            this.lblSec.TabIndex = 28;
+            this.lblSec.Text = "Sec";
+            this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMinute
+            // 
+            this.lblMinute.AutoSize = true;
+            this.lblMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinute.Location = new System.Drawing.Point(339, 366);
+            this.lblMinute.Name = "lblMinute";
+            this.lblMinute.Size = new System.Drawing.Size(34, 20);
+            this.lblMinute.TabIndex = 27;
+            this.lblMinute.Text = "Min";
+            this.lblMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHour
+            // 
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHour.Location = new System.Drawing.Point(248, 366);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(44, 20);
+            this.lblHour.TabIndex = 26;
+            this.lblHour.Text = "Hour";
+            this.lblHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtHumanDateSecond
+            // 
+            this.txtHumanDateSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHumanDateSecond.Location = new System.Drawing.Point(399, 389);
+            this.txtHumanDateSecond.Name = "txtHumanDateSecond";
+            this.txtHumanDateSecond.Size = new System.Drawing.Size(43, 31);
+            this.txtHumanDateSecond.TabIndex = 25;
+            this.txtHumanDateSecond.Text = "09";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(317, 389);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 31);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "-";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtHumanDateMinute
+            // 
+            this.txtHumanDateMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHumanDateMinute.Location = new System.Drawing.Point(336, 389);
+            this.txtHumanDateMinute.Name = "txtHumanDateMinute";
+            this.txtHumanDateMinute.Size = new System.Drawing.Size(43, 31);
+            this.txtHumanDateMinute.TabIndex = 23;
+            this.txtHumanDateMinute.Text = "07";
+            // 
+            // txtHumanDateHour
+            // 
+            this.txtHumanDateHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHumanDateHour.Location = new System.Drawing.Point(245, 389);
+            this.txtHumanDateHour.Name = "txtHumanDateHour";
+            this.txtHumanDateHour.Size = new System.Drawing.Size(70, 31);
+            this.txtHumanDateHour.TabIndex = 22;
+            this.txtHumanDateHour.Text = "2020";
+            // 
             // lblMonthDay
             // 
             this.lblMonthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3693,182 +3870,6 @@
             this.tmrEpochTime.Enabled = true;
             this.tmrEpochTime.Interval = 1000;
             this.tmrEpochTime.Tick += new System.EventHandler(this.tmrEpochTime_Tick);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(380, 389);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 31);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "-";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSec
-            // 
-            this.lblSec.AutoSize = true;
-            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSec.Location = new System.Drawing.Point(403, 366);
-            this.lblSec.Name = "lblSec";
-            this.lblSec.Size = new System.Drawing.Size(37, 20);
-            this.lblSec.TabIndex = 28;
-            this.lblSec.Text = "Sec";
-            this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblMinute
-            // 
-            this.lblMinute.AutoSize = true;
-            this.lblMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinute.Location = new System.Drawing.Point(339, 366);
-            this.lblMinute.Name = "lblMinute";
-            this.lblMinute.Size = new System.Drawing.Size(34, 20);
-            this.lblMinute.TabIndex = 27;
-            this.lblMinute.Text = "Min";
-            this.lblMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblHour
-            // 
-            this.lblHour.AutoSize = true;
-            this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHour.Location = new System.Drawing.Point(248, 366);
-            this.lblHour.Name = "lblHour";
-            this.lblHour.Size = new System.Drawing.Size(44, 20);
-            this.lblHour.TabIndex = 26;
-            this.lblHour.Text = "Hour";
-            this.lblHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtHumanDateSecond
-            // 
-            this.txtHumanDateSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHumanDateSecond.Location = new System.Drawing.Point(399, 389);
-            this.txtHumanDateSecond.Name = "txtHumanDateSecond";
-            this.txtHumanDateSecond.Size = new System.Drawing.Size(43, 31);
-            this.txtHumanDateSecond.TabIndex = 25;
-            this.txtHumanDateSecond.Text = "09";
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(317, 389);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 31);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "-";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtHumanDateMinute
-            // 
-            this.txtHumanDateMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHumanDateMinute.Location = new System.Drawing.Point(336, 389);
-            this.txtHumanDateMinute.Name = "txtHumanDateMinute";
-            this.txtHumanDateMinute.Size = new System.Drawing.Size(43, 31);
-            this.txtHumanDateMinute.TabIndex = 23;
-            this.txtHumanDateMinute.Text = "07";
-            // 
-            // txtHumanDateHour
-            // 
-            this.txtHumanDateHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHumanDateHour.Location = new System.Drawing.Point(245, 389);
-            this.txtHumanDateHour.Name = "txtHumanDateHour";
-            this.txtHumanDateHour.Size = new System.Drawing.Size(70, 31);
-            this.txtHumanDateHour.TabIndex = 22;
-            this.txtHumanDateHour.Text = "2020";
-            // 
-            // btnHumanDateToTimestamp
-            // 
-            this.btnHumanDateToTimestamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHumanDateToTimestamp.Location = new System.Drawing.Point(616, 387);
-            this.btnHumanDateToTimestamp.Name = "btnHumanDateToTimestamp";
-            this.btnHumanDateToTimestamp.Size = new System.Drawing.Size(200, 31);
-            this.btnHumanDateToTimestamp.TabIndex = 30;
-            this.btnHumanDateToTimestamp.Text = "Human dateto Timestamp";
-            this.btnHumanDateToTimestamp.UseVisualStyleBackColor = true;
-            this.btnHumanDateToTimestamp.Click += new System.EventHandler(this.btnHumanDateToTimestamp_Click);
-            // 
-            // lblEpochTimestampValue
-            // 
-            this.lblEpochTimestampValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEpochTimestampValue.Location = new System.Drawing.Point(242, 445);
-            this.lblEpochTimestampValue.Name = "lblEpochTimestampValue";
-            this.lblEpochTimestampValue.Size = new System.Drawing.Size(336, 16);
-            this.lblEpochTimestampValue.TabIndex = 32;
-            this.lblEpochTimestampValue.Text = "Epoch timestamp value";
-            // 
-            // lblEpochTimestamp
-            // 
-            this.lblEpochTimestamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEpochTimestamp.Location = new System.Drawing.Point(19, 445);
-            this.lblEpochTimestamp.Name = "lblEpochTimestamp";
-            this.lblEpochTimestamp.Size = new System.Drawing.Size(135, 16);
-            this.lblEpochTimestamp.TabIndex = 31;
-            this.lblEpochTimestamp.Text = "Epoch timestamp";
-            // 
-            // lblDateAndTimeGMTValue
-            // 
-            this.lblDateAndTimeGMTValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAndTimeGMTValue.Location = new System.Drawing.Point(242, 497);
-            this.lblDateAndTimeGMTValue.Name = "lblDateAndTimeGMTValue";
-            this.lblDateAndTimeGMTValue.Size = new System.Drawing.Size(336, 16);
-            this.lblDateAndTimeGMTValue.TabIndex = 34;
-            this.lblDateAndTimeGMTValue.Text = "Date and time (GMT) value";
-            // 
-            // lblDateAndTimeGMT
-            // 
-            this.lblDateAndTimeGMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAndTimeGMT.Location = new System.Drawing.Point(18, 497);
-            this.lblDateAndTimeGMT.Name = "lblDateAndTimeGMT";
-            this.lblDateAndTimeGMT.Size = new System.Drawing.Size(135, 16);
-            this.lblDateAndTimeGMT.TabIndex = 33;
-            this.lblDateAndTimeGMT.Text = "Date and time (GMT)";
-            // 
-            // lblTimestampMilliSeconds
-            // 
-            this.lblTimestampMilliSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimestampMilliSeconds.Location = new System.Drawing.Point(19, 468);
-            this.lblTimestampMilliSeconds.Name = "lblTimestampMilliSeconds";
-            this.lblTimestampMilliSeconds.Size = new System.Drawing.Size(197, 16);
-            this.lblTimestampMilliSeconds.TabIndex = 35;
-            this.lblTimestampMilliSeconds.Text = "Timestamp in milliseconds";
-            // 
-            // lblYourTimZoneDatetime
-            // 
-            this.lblYourTimZoneDatetime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourTimZoneDatetime.Location = new System.Drawing.Point(19, 519);
-            this.lblYourTimZoneDatetime.Name = "lblYourTimZoneDatetime";
-            this.lblYourTimZoneDatetime.Size = new System.Drawing.Size(197, 16);
-            this.lblYourTimZoneDatetime.TabIndex = 36;
-            this.lblYourTimZoneDatetime.Text = "Date and time (your time zone)";
-            // 
-            // lblTimestampMilliSecondValues
-            // 
-            this.lblTimestampMilliSecondValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimestampMilliSecondValues.Location = new System.Drawing.Point(242, 468);
-            this.lblTimestampMilliSecondValues.Name = "lblTimestampMilliSecondValues";
-            this.lblTimestampMilliSecondValues.Size = new System.Drawing.Size(336, 16);
-            this.lblTimestampMilliSecondValues.TabIndex = 37;
-            this.lblTimestampMilliSecondValues.Text = "Timestamp in milliseconds value";
-            // 
-            // lblYourTimZoneDatetimeValue
-            // 
-            this.lblYourTimZoneDatetimeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourTimZoneDatetimeValue.Location = new System.Drawing.Point(242, 519);
-            this.lblYourTimZoneDatetimeValue.Name = "lblYourTimZoneDatetimeValue";
-            this.lblYourTimZoneDatetimeValue.Size = new System.Drawing.Size(336, 16);
-            this.lblYourTimZoneDatetimeValue.TabIndex = 38;
-            this.lblYourTimZoneDatetimeValue.Text = "Date and time (your time zone) value";
-            // 
-            // cmbTimeKind
-            // 
-            this.cmbTimeKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTimeKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTimeKind.FormattingEnabled = true;
-            this.cmbTimeKind.Items.AddRange(new object[] {
-            "GMT",
-            "LocalTime"});
-            this.cmbTimeKind.Location = new System.Drawing.Point(464, 387);
-            this.cmbTimeKind.Name = "cmbTimeKind";
-            this.cmbTimeKind.Size = new System.Drawing.Size(136, 33);
-            this.cmbTimeKind.TabIndex = 39;
             // 
             // MainForm
             // 
