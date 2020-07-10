@@ -1,2 +1,2 @@
-# HexConverterAndCrcCalculater
-Hex to type convert, CRC calculate and Epoch &amp; Unix Timestamp Conversion
+# Hex Converter & Crc Calculater & Epoch-Unix Timestamp Conversion
+Hex to type convert, CRC calculate and Epoch-Unix Timestamp Conversion
