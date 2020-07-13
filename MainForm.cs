@@ -837,7 +837,7 @@ namespace HexToTypeConverter
             int rowId = -1;
             object value=null;
             byte[] hexDataBlock = new byte[4];
-            byte[] orderedHexDataBlock = new byte[4];
+            byte[] orderedHexDataBlock = new byte[hexDataList.Count];
             string hexDataText = "", byteOrder="", preColumnName="";
 
             DataGridView dataGridView = null;
