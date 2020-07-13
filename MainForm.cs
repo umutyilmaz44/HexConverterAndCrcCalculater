@@ -36,6 +36,9 @@ namespace HexToTypeConverter
             ConvertTimestampToHumanDate();
 
             ConvertHumanDateToTimestamp();
+
+            lblHexStats.Text = "";
+            lblHexStatsValue.Text = "";
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
@@ -46,6 +49,9 @@ namespace HexToTypeConverter
         private void btnAnalyzeData_Click(object sender, EventArgs e)
         {
             ConvertController convertController = new ConvertController();
+
+            string hexStats = "";
+            string hexStatsValue = "";
 
             #region Validation Control
             string hexDataText = txtHexData.Text.Trim().Replace(" ","").Replace("-", "");
@@ -72,11 +78,17 @@ namespace HexToTypeConverter
 
                 rawDataList.Add(hexData);
             }
+
+            hexStats += "Byte\r\n";
+            hexStatsValue += ": "+ rawDataList.Count + "\r\n";
             #endregion
 
             #region Hex To Data Type
             List<byte> hexDataList;
             hexDataList = convertController.CheckListLengthMultipleOf(rawDataList, 2);
+            
+            hexStats += "Register\r\n";
+            hexStatsValue += ": " + (hexDataList.Count / 2) + "\r\n";
 
             ConvertHexToAscii(hexDataList);
             ConvertHexToBinary(hexDataList);
@@ -88,6 +100,9 @@ namespace HexToTypeConverter
             ConvertHexToValue("UInt16", 2, hexDataList);
 
             hexDataList = convertController.CheckListLengthMultipleOf(rawDataList, 4);
+
+            hexStats += "Word\r\n";
+            hexStatsValue += ": " + (hexDataList.Count / 4) + "\r\n";
 
             ConvertHexToValue("Float", 1, hexDataList);
             ConvertHexToValue("Float", 2, hexDataList);
@@ -130,6 +145,9 @@ namespace HexToTypeConverter
             CalculateCheckSum("CheckSumCrc32KKoopman", rawDataList);
             CalculateCheckSum("CheckSumCrc32Q", rawDataList);
             #endregion
+
+            lblHexStats.Text = hexStats;
+            lblHexStatsValue.Text = hexStatsValue;
         }
 
         private void SetFormComponentSize()

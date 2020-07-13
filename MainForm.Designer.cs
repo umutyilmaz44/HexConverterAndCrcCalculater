@@ -134,7 +134,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAnalyzeData = new System.Windows.Forms.Button();
-            this.txtHexData = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -375,6 +374,9 @@
             this.txtEpochTime = new System.Windows.Forms.TextBox();
             this.lblUnixEpochTime = new System.Windows.Forms.Label();
             this.tmrEpochTime = new System.Windows.Forms.Timer(this.components);
+            this.txtHexData = new System.Windows.Forms.RichTextBox();
+            this.lblHexStats = new System.Windows.Forms.Label();
+            this.lblHexStatsValue = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.fpnlCrc5.SuspendLayout();
@@ -466,39 +468,28 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnAnalyzeData);
+            this.panel1.Controls.Add(this.lblHexStatsValue);
+            this.panel1.Controls.Add(this.lblHexStats);
             this.panel1.Controls.Add(this.txtHexData);
+            this.panel1.Controls.Add(this.btnAnalyzeData);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 85);
+            this.panel1.Size = new System.Drawing.Size(984, 140);
             this.panel1.TabIndex = 0;
             // 
             // btnAnalyzeData
             // 
-            this.btnAnalyzeData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnalyzeData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnalyzeData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnalyzeData.Location = new System.Drawing.Point(427, 41);
+            this.btnAnalyzeData.Location = new System.Drawing.Point(418, 95);
             this.btnAnalyzeData.Name = "btnAnalyzeData";
-            this.btnAnalyzeData.Size = new System.Drawing.Size(156, 39);
+            this.btnAnalyzeData.Size = new System.Drawing.Size(156, 38);
             this.btnAnalyzeData.TabIndex = 2;
             this.btnAnalyzeData.Text = "Analyze Data";
             this.btnAnalyzeData.UseVisualStyleBackColor = true;
             this.btnAnalyzeData.Click += new System.EventHandler(this.btnAnalyzeData_Click);
-            // 
-            // txtHexData
-            // 
-            this.txtHexData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHexData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHexData.Location = new System.Drawing.Point(163, 12);
-            this.txtHexData.Name = "txtHexData";
-            this.txtHexData.Size = new System.Drawing.Size(713, 24);
-            this.txtHexData.TabIndex = 1;
             // 
             // label1
             // 
@@ -1697,7 +1688,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(976, 578);
+            this.tabPage1.Size = new System.Drawing.Size(976, 523);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hex Convertor";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1713,7 +1704,7 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(3, 173);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(970, 402);
+            this.pnlMain.Size = new System.Drawing.Size(970, 347);
             this.pnlMain.TabIndex = 12;
             // 
             // flpnlDouble
@@ -3431,10 +3422,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 85);
+            this.tabControl1.Location = new System.Drawing.Point(0, 140);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 604);
+            this.tabControl1.Size = new System.Drawing.Size(984, 549);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage3
@@ -3871,6 +3862,31 @@
             this.tmrEpochTime.Interval = 1000;
             this.tmrEpochTime.Tick += new System.EventHandler(this.tmrEpochTime_Tick);
             // 
+            // txtHexData
+            // 
+            this.txtHexData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHexData.Location = new System.Drawing.Point(163, 15);
+            this.txtHexData.Name = "txtHexData";
+            this.txtHexData.Size = new System.Drawing.Size(713, 53);
+            this.txtHexData.TabIndex = 3;
+            this.txtHexData.Text = "";
+            // 
+            // lblHexStats
+            // 
+            this.lblHexStats.Location = new System.Drawing.Point(160, 80);
+            this.lblHexStats.Name = "lblHexStats";
+            this.lblHexStats.Size = new System.Drawing.Size(59, 53);
+            this.lblHexStats.TabIndex = 4;
+            this.lblHexStats.Text = "Hex Stats";
+            // 
+            // lblHexStatsValue
+            // 
+            this.lblHexStatsValue.Location = new System.Drawing.Point(224, 80);
+            this.lblHexStatsValue.Name = "lblHexStatsValue";
+            this.lblHexStatsValue.Size = new System.Drawing.Size(59, 53);
+            this.lblHexStatsValue.TabIndex = 5;
+            this.lblHexStatsValue.Text = "Hex Stats Value";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3982,7 +3998,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAnalyzeData;
-        private System.Windows.Forms.TextBox txtHexData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -4223,6 +4238,9 @@
         private System.Windows.Forms.Label lblEpochTimestampValue;
         private System.Windows.Forms.Label lblEpochTimestamp;
         private System.Windows.Forms.ComboBox cmbTimeKind;
+        private System.Windows.Forms.RichTextBox txtHexData;
+        private System.Windows.Forms.Label lblHexStats;
+        private System.Windows.Forms.Label lblHexStatsValue;
     }
 }
 
